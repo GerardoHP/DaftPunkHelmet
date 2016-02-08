@@ -3,4 +3,5 @@
   <string name="Hello">Hello World, Click Me!</string>
   <string name="ApplicationName">androidApp</string>
   <string name="SwitchText">Encender LED</string>
+  <string name="ColorPickerButton">Escoger color</string>
 </resources>

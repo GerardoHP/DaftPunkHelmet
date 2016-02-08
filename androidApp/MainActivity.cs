@@ -1,4 +1,4 @@
-﻿using System;
+﻿    using System;
 using Android.App;
 using Android.Content;
 using Android.Runtime;
@@ -49,6 +49,24 @@ namespace androidApp
             // var color = FindViewById<ColorPicker.ColorPanelView>(Resource.Id.color_panel_new);
             //switchButton.Click += SwitchButton_Click;
             //Connect();
+            var colorPickerIntentButton = FindViewById<Button>(Resource.Id.firstcolorPickerIntentButton);
+            colorPickerIntentButton.Click += delegate
+            {
+                var intent = new Intent(this, typeof(ColorPickerActivity));
+                StartActivityForResult(intent, 0);
+            };
+        }
+
+        protected override void OnActivityResult(int requestCode, [GeneratedEnum] Result resultCode, Intent data)
+        {
+            base.OnActivityResult(requestCode, resultCode, data);
+            if (resultCode == Android.App.Result.Ok)
+            {
+                var colorLabel = FindViewById<TextView>(Resource.Id.firstColor);
+                var selectedColorStr = data.GetStringExtra("colorSelected");
+                colorLabel.Text = selectedColorStr;
+                colorLabel.SetBackgroundColor(Android.Graphics.Color.ParseColor(selectedColorStr));
+            }
         }
 
         private void SwitchButton_Click(object sender, EventArgs e)

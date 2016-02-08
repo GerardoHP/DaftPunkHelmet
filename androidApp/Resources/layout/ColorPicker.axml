@@ -1,7 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
-</LinearLayout>
+    <TextView
+        android:text="Selecciona los valores hexadecimales"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/selectColorTitle"
+        android:layout_marginBottom="10dp" />
+    <TextView
+        android:text="Rojo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/redValueLabel"
+        android:layout_alignParentLeft="true"
+        android:layout_toLeftOf="@+id/redValue"
+        android:layout_below="@id/selectColorTitle" />
+    <TextView
+        android:layout_width="96dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/redValue"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/selectColorTitle" />
+    <SeekBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/redSeekBar"
+        android:layout_below="@id/redValueLabel"
+        android:max="255"
+        android:layout_marginBottom="10dp" />
+    <TextView
+        android:text="Verde"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/greenValueLabel"
+        android:layout_alignParentLeft="true"
+        android:layout_toLeftOf="@+id/redValue"
+        android:layout_below="@id/redSeekBar" />
+    <TextView
+        android:layout_width="96dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/greenValue"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/redSeekBar" />
+    <SeekBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/greenSeekBar"
+        android:layout_below="@id/greenValueLabel"
+        android:max="255"
+        android:layout_marginBottom="10dp" />
+    <TextView
+        android:text="Azul"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/blueValueLabel"
+        android:layout_alignParentLeft="true"
+        android:layout_toLeftOf="@+id/blueValue"
+        android:layout_below="@id/greenSeekBar" />
+    <TextView
+        android:layout_width="96dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/blueValue"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/greenSeekBar" />
+    <SeekBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/blueSeekBar"
+        android:layout_below="@id/blueValueLabel"
+        android:max="255"
+        android:layout_marginBottom="10dp" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/colorValue"
+        android:layout_below="@id/blueSeekBar" />
+    <Button
+        android:text="Enviar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/colorValue"
+        android:id="@+id/returnButton" />
+</RelativeLayout>
