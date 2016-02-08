@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <TextView
+        android:text="@string/SwitchText"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="248.5dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView1" />
+    <Switch
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/switchButton"
+        android:layout_marginRight="0.0dp"
+        android:layout_marginLeft="0.0dp" />
+    <TextView
+        android:gravity="center_horizontal"
+        android:id="@+id/textView1"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:text="..." />
+</LinearLayout>
