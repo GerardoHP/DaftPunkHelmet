@@ -50,4 +50,110 @@
         android:layout_below="@id/firstColorTextView"
         android:id="@+id/firstcolorPickerIntentButton"
         android:text="@string/ColorPickerButton" />
+    <TextView
+        android:text="Segundo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/firstcolorPickerIntentButton"
+        android:id="@+id/secondColorTextView" />
+    <TextView
+        android:layout_width="96dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/secondColorTextView"
+        android:layout_toLeftOf="@+id/secondPickerIntentButton"
+        android:layout_alignParentLeft="true"
+        android:id="@+id/secondColor" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/secondColorTextView"
+        android:id="@+id/secondcolorPickerIntentButton"
+        android:text="@string/ColorPickerButton" />
+    <TextView
+        android:text="Tercero"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/secondcolorPickerIntentButton"
+        android:id="@+id/thirdColorTextView" />
+    <TextView
+        android:layout_width="96dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/thirdColorTextView"
+        android:layout_toLeftOf="@+id/thirdPickerIntentButton"
+        android:layout_alignParentLeft="true"
+        android:id="@+id/thirdColor" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/thirdColorTextView"
+        android:id="@+id/thirdcolorPickerIntentButton"
+        android:text="@string/ColorPickerButton" />
+    <TextView
+        android:text="Cuarto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/thirdcolorPickerIntentButton"
+        android:id="@+id/fourthColorTextView" />
+    <TextView
+        android:layout_width="96dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/fourthColorTextView"
+        android:layout_toLeftOf="@+id/fourthPickerIntentButton"
+        android:layout_alignParentLeft="true"
+        android:id="@+id/fourthColor" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/fourthColorTextView"
+        android:id="@+id/fourthcolorPickerIntentButton"
+        android:text="@string/ColorPickerButton" />
+    <TextView
+        android:text="Quinto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/fourthcolorPickerIntentButton"
+        android:id="@+id/fifthColorTextView" />
+    <TextView
+        android:layout_width="96dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/fifthColorTextView"
+        android:layout_toLeftOf="@+id/fifthPickerIntentButton"
+        android:layout_alignParentLeft="true"
+        android:id="@+id/fifthColor" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/fifthColorTextView"
+        android:id="@+id/fifthcolorPickerIntentButton"
+        android:text="@string/ColorPickerButton" />
+    <TextView
+        android:text="Sexto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/fifthcolorPickerIntentButton"
+        android:id="@+id/sixthColorTextView" />
+    <TextView
+        android:layout_width="96dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sixthColorTextView"
+        android:layout_toLeftOf="@+id/sixthPickerIntentButton"
+        android:layout_alignParentLeft="true"
+        android:id="@+id/sixthColor" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/sixthColorTextView"
+        android:id="@+id/sixthcolorPickerIntentButton"
+        android:text="@string/ColorPickerButton" />
+    <Button
+        android:text="Enviar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sixthcolorPickerIntentButton"
+        android:id="@+id/sendButton" />
 </RelativeLayout>

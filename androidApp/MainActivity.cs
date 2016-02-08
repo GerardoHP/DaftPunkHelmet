@@ -1,4 +1,4 @@
-﻿    using System;
+﻿using System;
 using Android.App;
 using Android.Content;
 using Android.Runtime;
@@ -9,6 +9,8 @@ using System.IO;
 using Java.Util;
 using Android.Bluetooth;
 using System.Threading.Tasks;
+using System.Collections.Generic;
+using Newtonsoft.Json;
 
 namespace androidApp
 {
@@ -49,11 +51,60 @@ namespace androidApp
             // var color = FindViewById<ColorPicker.ColorPanelView>(Resource.Id.color_panel_new);
             //switchButton.Click += SwitchButton_Click;
             //Connect();
-            var colorPickerIntentButton = FindViewById<Button>(Resource.Id.firstcolorPickerIntentButton);
-            colorPickerIntentButton.Click += delegate
+            var firstcolorPickerIntentButton = FindViewById<Button>(Resource.Id.firstcolorPickerIntentButton);
+            firstcolorPickerIntentButton.Click += delegate
             {
                 var intent = new Intent(this, typeof(ColorPickerActivity));
-                StartActivityForResult(intent, 0);
+                StartActivityForResult(intent, Resource.Id.firstColor);
+            };
+
+            var secondcolorPickerIntentButton = FindViewById<Button>(Resource.Id.secondcolorPickerIntentButton);
+            secondcolorPickerIntentButton.Click += delegate
+            {
+                var intent = new Intent(this, typeof(ColorPickerActivity));
+                StartActivityForResult(intent, Resource.Id.secondColor);
+            };
+
+            var thirdcolorPickerIntentButton = FindViewById<Button>(Resource.Id.thirdcolorPickerIntentButton);
+            thirdcolorPickerIntentButton.Click += delegate
+            {
+                var intent = new Intent(this, typeof(ColorPickerActivity));
+                StartActivityForResult(intent, Resource.Id.thirdColor);
+            };
+
+            var fourthcolorPickerIntentButton = FindViewById<Button>(Resource.Id.fourthcolorPickerIntentButton);
+            fourthcolorPickerIntentButton.Click += delegate
+            {
+                var intent = new Intent(this, typeof(ColorPickerActivity));
+                StartActivityForResult(intent, Resource.Id.fourthColor);
+            };
+
+            var fifthcolorPickerIntentButton = FindViewById<Button>(Resource.Id.fifthcolorPickerIntentButton);
+            fifthcolorPickerIntentButton.Click += delegate
+            {
+                var intent = new Intent(this, typeof(ColorPickerActivity));
+                StartActivityForResult(intent, Resource.Id.fifthColor);
+            };
+
+            var sixthcolorPickerIntentButton = FindViewById<Button>(Resource.Id.sixthcolorPickerIntentButton);
+            sixthcolorPickerIntentButton.Click += delegate
+            {
+                var intent = new Intent(this, typeof(ColorPickerActivity));
+                StartActivityForResult(intent, Resource.Id.sixthColor);
+            };
+
+            var sendbutton = FindViewById<Button>(Resource.Id.sendButton);
+            sendbutton.Click += delegate
+            {
+                var stringList = new List<string>();
+                stringList.Add(FindViewById<TextView>(Resource.Id.firstColor).Text);
+                stringList.Add(FindViewById<TextView>(Resource.Id.secondColor).Text);
+                stringList.Add(FindViewById<TextView>(Resource.Id.thirdColor).Text);
+                stringList.Add(FindViewById<TextView>(Resource.Id.fourthColor).Text);
+                stringList.Add(FindViewById<TextView>(Resource.Id.fifthColor).Text);
+                stringList.Add(FindViewById<TextView>(Resource.Id.sixthColor).Text);
+
+                var jsonString = JsonConvert.SerializeObject(stringList);
             };
         }
 
@@ -62,7 +113,7 @@ namespace androidApp
             base.OnActivityResult(requestCode, resultCode, data);
             if (resultCode == Android.App.Result.Ok)
             {
-                var colorLabel = FindViewById<TextView>(Resource.Id.firstColor);
+                var colorLabel = FindViewById<TextView>(requestCode);
                 var selectedColorStr = data.GetStringExtra("colorSelected");
                 colorLabel.Text = selectedColorStr;
                 colorLabel.SetBackgroundColor(Android.Graphics.Color.ParseColor(selectedColorStr));
