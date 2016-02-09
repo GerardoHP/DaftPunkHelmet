@@ -15,8 +15,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/switchButton"
         android:layout_marginRight="0.0dp"
-        android:layout_marginLeft="0.0dp"
-        android:visibility="gone" />
+        android:layout_marginLeft="0.0dp" />
     <TextView
         android:gravity="center_horizontal"
         android:id="@+id/textView1"

@@ -49,8 +49,10 @@ namespace androidApp
             Result = FindViewById<TextView>(Resource.Id.textView1);
 
             // var color = FindViewById<ColorPicker.ColorPanelView>(Resource.Id.color_panel_new);
-            //switchButton.Click += SwitchButton_Click;
-            //Connect();
+            switchButton.Click += SwitchButton_Click;
+
+            Connect();
+
             var firstcolorPickerIntentButton = FindViewById<Button>(Resource.Id.firstcolorPickerIntentButton);
             firstcolorPickerIntentButton.Click += delegate
             {
@@ -104,7 +106,8 @@ namespace androidApp
                 stringList.Add(FindViewById<TextView>(Resource.Id.fifthColor).Text);
                 stringList.Add(FindViewById<TextView>(Resource.Id.sixthColor).Text);
 
-                var jsonString = JsonConvert.SerializeObject(stringList);
+                var jsonString = JsonConvert.SerializeObject(new { colors = stringList });
+                writeData(new Java.Lang.String(jsonString));
             };
         }
 
@@ -176,6 +179,7 @@ namespace androidApp
                 }
                 System.Console.WriteLine("Socket Creado");
             }
+
             //Una vez conectados al bluetooth mandamos llamar el metodo que generara el hilo
             //que recibira los datos del arduino
             beginListenForData();
@@ -252,7 +256,7 @@ namespace androidApp
             }
 
             //creamos el string que enviaremos
-            Java.Lang.String message = data;
+            Java.Lang.String message = new Java.Lang.String(data.Concat("\n"));
 
             //lo convertimos en bytes
             byte[] msgBuffer = message.GetBytes();
@@ -270,4 +274,3 @@ namespace androidApp
 
     }
 }
-
